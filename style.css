@@ -94,7 +94,7 @@ header nav ul li a:hover::after {
 /* Main (tela cheia com imagem de fundo) */
 #main {
     height: 100vh;
-    background: url("imagens/Background.png") no-repeat center center/cover;
+    background: url("../imagens/Background.png") no-repeat center center/cover;
     display: flex;
     align-items: flex-end;  /* leva para baixo */
     justify-content: center;
