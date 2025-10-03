@@ -1,0 +1,571 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* quando a classe hidden for ativada */
+header.hidden {
+    top: -80px;
+}
+
+/* Header fixo e com padding equilibrado */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.4s ease;
+    padding: 50px 250px;  /* padding mais flexível */
+}
+
+/* Flexbox para separar os menus */
+header nav {
+    display: flex;
+    justify-content: space-between; /* esquerda e direita */
+    align-items: center;
+}
+
+/* Estilo da lista de menus */
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 50px; /* espaçamento entre os itens */
+    padding: 50;
+    margin: 50;
+}
+
+/* Links */
+header nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 2em;  /* AUMENTEI O TAMANHO DA FONTE */
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Efeito hover elegante (sublinhado animado) */
+header nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #e67e99;
+    transition: width 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* garante espaço no scroll com header fixo */
+}
+
+header nav ul li a:hover {
+    color: #e67e99;
+}
+
+header nav ul li a:hover::after {
+    width: 100%; /* aparece o sublinhado */
+}
+
+/* Responsividade para telas menores (celulares/tablets) */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px; /* menos espaçamento lateral */
+    }
+
+    header nav ul {
+        gap: 25px; /* menos espaço entre os links */
+    }
+
+    header nav ul li a {
+        font-size: 1rem; /* fonte menor em celular */
+    }
+}
+
+/* Main (tela cheia com imagem de fundo) */
+#main {
+    height: 100vh;
+    background: url("imagens/Background.png") no-repeat center center/cover;
+    display: flex;
+    align-items: flex-end;  /* leva para baixo */
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 80px;  /* espaço a partir do rodapé */
+}
+
+#main .overlay {
+    margin-top: 0; /* remove */
+}
+
+#main .logo {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+#main h1 {
+    font-size: 3rem;
+    color: #d87b97;
+    font-family: "Georgia", serif;
+}
+
+#main p {
+    font-size: 1.2rem;
+    margin: 10px 0 20px;
+    color: #333;
+}
+
+#main .overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* começa do topo */
+    color: #333;
+    margin-top: 550px; /* <-- ajusta esse valor até alinhar com o texto da imagem */
+}
+
+.btn-agendar {
+    margin-top: 20px; /* só um espacinho em relação ao texto da imagem */
+    padding: 22px 50px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+/* Seções padrão */
+/* section {
+    padding: 80px 20px;
+    text-align: center;
+} */
+
+.TituloTrajetoria{
+
+    padding: 20px 50px;
+    text-align: left;
+    font-size: 3.5rem;
+    font-family: 'Dancing Script', cursive;
+
+}
+
+.textoTrajetoria{
+
+    padding: 20px 65px;
+    text-align: justify;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 30%;
+
+}
+
+.imagemStudio {
+    display: block;               /* transforma a imagem em bloco p/ poder centralizar */
+    margin: 20px auto;            /* auto nas laterais centraliza */
+    max-width: 60%;              /* ocupa no máximo 100% da tela */
+    height: auto;                 /* mantém a proporção da imagem */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.textoTrajetoria_2 {
+    display: block; 
+    padding: 20px;                 /* Espaço interno */
+    text-align: justify;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+
+    max-width: 70%;                /* no máximo metade da tela */
+    margin: 20px auto;             /* centraliza horizontalmente */
+
+}
+@media (max-width: 768px) {
+    .textoTrajetoria_2 {
+        max-width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .textoTrajetoria {
+        margin-right: 0; /* evita esmagamento no celular */
+        max-width: 90%;
+    }
+}
+
+.linha {
+    width: 80%;
+    height: auto;                 /* deixa ajustar o tamanho ao conteúdo */
+    display: flex;                /* coloca elementos lado a lado */
+    align-items: center;          /* alinha verticalmente no centro */
+    justify-content: center;      /* centraliza no container */
+    gap: 20px;                    /* espaço entre o <p> e a imagem */
+    margin: 40px auto;
+}
+
+
+.sobre-container {
+    display: flex;              /* coloca texto e imagem lado a lado */
+    align-items: center;        /* alinha verticalmente no centro */
+    justify-content: space-between; /* separa bem texto e imagem */
+    gap: 150px;                  /* espaço entre texto e imagem */
+    max-width: 90%;             /* limite de largura */
+    margin: 50px auto;          /* centraliza na página */
+}
+
+.sobre-texto {
+    flex: 1;                    /* ocupa mais espaço */
+}
+
+.TituloSobre {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.textoSobre {
+    font-size: 1.4rem;
+    text-align: justify;
+}
+
+.Tatuando {
+    max-width: 500px;           /* controla tamanho máx. da img */
+    width: 100%;                /* responsiva dentro do limite */
+    height: auto;               /* mantém proporção */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .sobre-container {
+        flex-direction: column;  /* empilha em tela pequena */
+        text-align: center;
+    }
+
+    .sobre-texto {
+        text-align: center;      /* centraliza título e texto no mobile */
+    }
+
+    .Tatuando {
+        max-width: 90%;          /* ocupa quase toda largura */
+    }
+}
+
+#galeria {
+  text-align: center;
+  padding: 80px 20px;
+  background: #fff;
+}
+
+.titulo-galeria {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-family: 'Dancing Script', cursive;
+}
+
+.subtitulo-galeria {
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Container do carrossel */
+
+
+/* Container do carrossel */
+.carousel-container {
+  position: relative;
+  width: 90%;
+  margin: auto;
+  overflow: hidden; 
+}
+
+/* Faixa do carrossel */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Cards individuais */
+.card {
+  flex: 0 0 calc(33.33% - 30px); /* 3 cards por view, com espaço */
+  margin: 0 15px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card img {
+  width: 100%; 
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;                       /* centraliza verticalmente */
+  transform: translateY(-50%);    /* corrige a posição */
+  background: rgba(0, 0, 0, 0.5); /* fundo */
+  color: white;                   /* cor da setinha */
+  border: none;
+  font-size: 2rem;
+  width: 50px;                    /* botão quadrado */
+  height: 50px;                   /* altura igual largura */
+  cursor: pointer;
+  border-radius: 50%;             /* deixa redondo */
+  z-index: 10;
+  transition: background 0.3s ease;
+  display: flex;                  /* centraliza ícone */
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+#endereco {
+  text-align: center;
+  padding: 80px 20px;
+  background: #f4f4f4;
+}
+
+#endereco h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.map-container {
+  max-width: 1500px;   /* largura máxima */
+  margin: 0 auto;     /* centraliza */
+  border-radius: 12px;
+  overflow: hidden;   /* esconde bordas do mapa arredondado */
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Layout geral: form organizado em 2 colunas */
+.contato-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: sans-serif;
+  border-radius: 10px;
+}
+
+/* Coluna do formulário */
+.contato-form {
+  flex: 1;
+}
+
+.contato-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contato-form label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.contato-form input,
+.contato-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.contato-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Inputs lado a lado */
+.input-duplo {
+  display: flex;
+  gap: 10px;
+}
+
+.input-duplo label {
+  flex: 1;
+}
+
+/* Coluna da imagem + botão */
+.contato-imagem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centraliza a imagem e o botão */
+}
+
+.contato-imagem img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+/* Botão */
+.contato-imagem button {
+  background: rgba(255, 157, 157);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.contato-imagem button:hover {
+  background: #333;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .contato-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contato-imagem {
+    margin-top: 20px;
+  }
+}
+
+
+/* Rodapé */
+#rodape {
+  background-color: #000; /* fundo preto */
+  color: #fff; /* texto branco */
+  padding: 30px 20px;
+  text-align: center;
+  font-family: sans-serif;
+  border-radius: 8px 8px 0 0;
+  margin-top: 50px;
+}
+
+/* Parte de cima do rodapé */
+.rodape-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* para ajustar em telas pequenas */
+  margin-bottom: 15px;
+}
+
+/* Redes sociais */
+.redes-sociais h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.redes-sociais .icones {
+  display: flex;
+  gap: 15px;
+}
+
+.redes-sociais .icones a img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* deixa redondinho */
+  background: #fff; /* fundo branco pro destaque */
+  padding: 8px;
+  transition: transform 0.2s, background 0.3s;
+}
+
+/* Efeito hover nos ícones */
+.redes-sociais .icones a img:hover {
+  transform: scale(1.1);
+  background: #ff4081; /* cor rosa no hover */
+}
+
+/* Texto do estúdio */
+.rodape-texto p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Linha divisória */
+#rodape hr {
+  border: none;
+  border-top: 1px solid #444;
+  margin: 15px 0;
+}
+
+/* Créditos */
+.rodape-creditos {
+  font-size: 13px;
+  color: #bbb;
+}
+
+.rodape-creditos strong {
+  color: #fff;
+}
+
+.DesenvolvidoPor {
+  color: #ff4081;
+  text-decoration: none;
+}
+
+
+/* Ícone flutuante do WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 120px;
+  right: 120px;
+  z-index: 9999; /* fica por cima de tudo */
+}
+
+.whatsapp-float img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+/* Efeito hover */
+.whatsapp-float img:hover {
+  transform: scale(1.1);
+}
+
+#sobre { background: #f4f4f4; }
+#galeria { background: #fff; }
+#endereco { background: #f4f4f4; }
+#contato { background: #fff; }
