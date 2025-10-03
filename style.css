@@ -103,7 +103,7 @@ header nav ul li a:hover::after {
   overflow: hidden; /* corta o excesso da imagem */
 }
 
-#main .bg-img {
+.bg-img {
   position: absolute;
   top: 0;
   left: 0;
