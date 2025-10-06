@@ -83,11 +83,12 @@ header nav ul li a:hover::after {
   position: relative;
   height: 100vh;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  flex-direction: column; /* Alinha os itens em coluna para melhor controle */
+  align-items: center;
+  justify-content: center; /* Centraliza verticalmente */
   text-align: center;
   padding-bottom: 80px;
-  overflow: hidden; /* corta o excesso da imagem */
+  overflow: hidden;
 }
 
 .bg-img {
@@ -96,52 +97,56 @@ header nav ul li a:hover::after {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* faz cobrir como background-size: cover */
-  z-index: -1;         /* fica atrás do conteúdo */
+  object-fit: cover;
+  z-index: -1;
+}
+
+#main h1.main-title {
+  font-size: 7rem;
+  color: #ff9e95;
+  font-family: 'Dancing Script', cursive;
+  margin-bottom: 0.5rem; /* Reduz a margem para aproximar o subtítulo */
+  margin-top: 20%;
+  -webkit-text-stroke: 2px black; /* Borda preta de 1px para navegadores WebKit */
+backdrop-filter: blur(2px);
+}
+
+#main p.main-subtitle {
+  font-size: 2.5rem;
+  color: #333;
+  font-family: 'Dancing Script', cursive;
+  margin: 0 0 1.5rem 0; /* Ajusta margens para alinhamento consistente */
+  backdrop-filter: blur(2px);
 }
 
 #main .overlay {
-    margin-top: 0; /* remove */
-}
-
-#main .logo {
-    width: 180px;
-    margin-bottom: 20px;
-}
-
-#main h1 {
-    font-size: 3rem;
-    color: #d87b97;
-    font-family: "Georgia", serif;
-}
-
-#main p {
-    font-size: 1.2rem;
-    margin: 10px 0 20px;
-    color: #333;
-}
-
-#main .overlay {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; /* começa do topo */
-    color: #333;
-    margin-top: 550px; /* <-- ajusta esse valor até alinhar com o texto da imagem */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centraliza o conteúdo do overlay */
+  margin-top: 0; /* Remove o margin-top fixo para fluir naturalmente */
 }
 
 .btn-agendar {
-    margin-top: 20px; /* só um espacinho em relação ao texto da imagem */
-    padding: 22px 50px;
-    background: black;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-    font-size: 1.2rem;
-    transition: 0.3s;
+  margin-top: 20px;
+  padding: 22px 50px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  transition: 0.3s;
 }
 
+.btn-agendar:hover {
+  background: #333; /* Adiciona um hover para maior interatividade */
+}
+
+#main .logo {
+  width: 180px;
+  margin-bottom: 20px;
+}
 /* Seções padrão */
 /* section {
     padding: 80px 20px;
@@ -734,6 +739,23 @@ header nav ul li a:hover::after {
     margin-top: -60px;
   }
 
+  #main h1.main-title {
+  font-size: 3rem;
+  color: #ff9e95;
+  font-family: 'Dancing Script', cursive;
+  margin-bottom: 0.5rem; /* Reduz a margem para aproximar o subtítulo */
+  margin-top: 80%;
+  -webkit-text-stroke: 2px black; /* Borda preta de 1px para navegadores WebKit */
+backdrop-filter: blur(2px);
+}
+
+#main p.main-subtitle {
+  font-size: 2rem;
+  color: #333;
+  font-family: 'Dancing Script', cursive;
+  margin: 0 0 1.5rem 0; /* Ajusta margens para alinhamento consistente */
+  backdrop-filter: blur(2px);
+}
 
 }
 #sobre { background: #f4f4f4; }
