@@ -720,10 +720,19 @@ header nav ul li a:hover::after {
 }
 
 
+.titulo-galeria {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-family: 'Dancing Script', cursive;
+  margin-top: -50px;
+}
 
 
-
-
+.endereco{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    margin-top: -60px;
+  }
 
 
 }
