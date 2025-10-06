@@ -76,20 +76,7 @@ header nav ul li a:hover::after {
     width: 100%; /* aparece o sublinhado */
 }
 
-/* Responsividade para telas menores (celulares/tablets) */
-@media (max-width: 768px) {
-    header {
-        padding: 15px 20px; /* menos espaçamento lateral */
-    }
 
-    header nav ul {
-        gap: 25px; /* menos espaço entre os links */
-    }
-
-    header nav ul li a {
-        font-size: 1rem; /* fonte menor em celular */
-    }
-}
 
 /* Main (tela cheia com imagem de fundo) */
 #main {
@@ -200,17 +187,7 @@ header nav ul li a:hover::after {
     margin: 20px auto;             /* centraliza horizontalmente */
 
 }
-@media (max-width: 768px) {
-    .textoTrajetoria_2 {
-        max-width: 90%;
-        font-size: 1.2rem;
-    }
 
-    .textoTrajetoria {
-        margin-right: 0; /* evita esmagamento no celular */
-        max-width: 90%;
-    }
-}
 
 .linha {
     width: 80%;
@@ -255,21 +232,6 @@ header nav ul li a:hover::after {
     height: auto;               /* mantém proporção */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-@media (max-width: 768px) {
-    .sobre-container {
-        flex-direction: column;  /* empilha em tela pequena */
-        text-align: center;
-    }
-
-    .sobre-texto {
-        text-align: center;      /* centraliza título e texto no mobile */
-    }
-
-    .Tatuando {
-        max-width: 90%;          /* ocupa quase toda largura */
-    }
 }
 
 #galeria {
@@ -468,16 +430,6 @@ header nav ul li a:hover::after {
 }
 
 /* Responsivo */
-@media (max-width: 768px) {
-  .contato-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .contato-imagem {
-    margin-top: 20px;
-  }
-}
 
 
 /* Rodapé */
@@ -576,6 +528,205 @@ header nav ul li a:hover::after {
   transform: scale(1.1);
 }
 
+@media (max-width: 768px) {
+.whatsapp-float {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 9999; /* fica por cima de tudo */
+}
+.whatsapp-float img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+
+}
+    header {
+        padding: 15px 20px; /* menos espaçamento lateral */
+    }
+
+    header nav ul {
+        gap: 25px; /* menos espaço entre os links */
+    }
+
+    header nav ul li a {
+        font-size: 1rem; /* fonte menor em celular */
+    }
+
+    .textoTrajetoria_2 {
+        max-width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .textoTrajetoria {
+        margin-right: 0; /* evita esmagamento no celular */
+        max-width: 90%;
+    }
+
+    .sobre-container {
+        flex-direction: column;  /* empilha em tela pequena */
+        text-align: center;
+    }
+
+    .sobre-texto {
+        text-align: center;      /* centraliza título e texto no mobile */
+    }
+
+    .Tatuando {
+        max-width: 90%;          /* ocupa quase toda largura */
+    }
+
+  .contato-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contato-imagem {
+    margin-top: 20px;
+  }
+
+.imagemStudio {
+    display: block;               /* transforma a imagem em bloco p/ poder centralizar */
+    margin: 20px auto;            /* auto nas laterais centraliza */
+    max-width: 80%;              /* ocupa no máximo 100% da tela */
+    height: auto;                 /* mantém a proporção da imagem */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.TituloTrajetoria{
+
+    padding: 20px 50px;
+    text-align: left;
+    font-size: 2rem;
+    font-family: 'Dancing Script', cursive;
+
+}
+
+
+.textoTrajetoria{
+
+    padding: 20px 65px;
+    text-align: justify;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 15%;
+
+}
+
+.textoTrajetoria_2 {
+    display: block; 
+    padding: 20px;                 /* Espaço interno */
+    text-align: justify;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 90%;                /* no máximo metade da tela */
+    margin: 20px auto;             /* centraliza horizontalmente */
+
+}
+
+.TituloSobre {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+    margin-left: auto;
+    margin-right: auto;
+}
+.textoSobre {
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.Tatuando {
+    max-width: 300px;           /* controla tamanho máx. da img */
+    width: 100%;                /* responsiva dentro do limite */
+    height: auto;               /* mantém proporção */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-top: -30%;
+}
+
+
+/* Container do carrossel */
+.carousel-container {
+  position: relative;
+  width: 90%;
+  margin: auto;
+  overflow: hidden; 
+}
+
+/* Faixa do carrossel */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Cards individuais */
+.card {
+  flex: 0 0 calc(100% - 30px); /* 3 cards por view, com espaço */
+  margin: 0 15px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card img {
+  width: 100%; 
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;                       /* centraliza verticalmente */
+  transform: translateY(-50%);    /* corrige a posição */
+  background: rgba(0, 0, 0, 0.5); /* fundo */
+  color: white;                   /* cor da setinha */
+  border: none;
+  font-size: 2rem;
+  width: 50px;                    /* botão quadrado */
+  height: 50px;                   /* altura igual largura */
+  cursor: pointer;
+  border-radius: 50%;             /* deixa redondo */
+  z-index: 10;
+  transition: background 0.3s ease;
+  display: flex;                  /* centraliza ícone */
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+
+
+
+
+
+
+
+}
 #sobre { background: #f4f4f4; }
 #galeria { background: #fff; }
 #endereco { background: #f4f4f4; }
